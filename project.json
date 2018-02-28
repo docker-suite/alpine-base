@@ -1,0 +1,11 @@
+{
+  "name": "craftdock/alpine-base",
+  "default": "latest",
+  "versions": [
+    {
+      "version": "latest",
+      "dockerfile": "Dockerfile",
+      "context": "."
+    }
+  ]
+}
