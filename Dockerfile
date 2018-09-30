@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 LABEL maintainer="Hexosse <hexosse@gmail.com>" \
       description="Minimal Alpine image used as a base image."
