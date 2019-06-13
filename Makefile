@@ -67,7 +67,7 @@ test-3.9: build-3.9
 push-3.7: build-3.7
 	@docker push $(DOCKER_IMAGE):3.7
 
-push-3.8: build-38
+push-3.8: build-3.8
 	@docker push $(DOCKER_IMAGE):3.8
 
 push-3.9: build-3.9
