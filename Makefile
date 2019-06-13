@@ -35,7 +35,7 @@ build-3.9:
 
 
 test-3.7: build-3.7
-	@docker run --rm -it \
+	@docker run --rm -t \
 		-e http_proxy=${http_proxy} \
 		-e https_proxy=${https_proxy} \
 		-v $(DIR)/tests:/goss \
@@ -45,7 +45,7 @@ test-3.7: build-3.7
 		dgoss run --entrypoint=/goss/entrypoint.sh $(DOCKER_IMAGE):3.7
 
 test-3.8: build-3.8
-	@docker run --rm -it \
+	@docker run --rm -t \
 		-e http_proxy=${http_proxy} \
 		-e https_proxy=${https_proxy} \
 		-v $(DIR)/tests:/goss \
@@ -55,7 +55,7 @@ test-3.8: build-3.8
 		dgoss run --entrypoint=/goss/entrypoint.sh $(DOCKER_IMAGE):3.8
 
 test-3.9: build-3.9
-	@docker run --rm -it \
+	@docker run --rm -t \
 		-e http_proxy=${http_proxy} \
 		-e https_proxy=${https_proxy} \
 		-v $(DIR)/tests:/goss \
