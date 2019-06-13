@@ -1,8 +1,12 @@
 FROM alpine:3.8
 
 LABEL maintainer="Hexosse <hexosse@gmail.com>" \
-      description="Minimal Alpine image used as a base image."
+      description="Minimal Alpine image used as a base image." \
+      vendor="docker-suite" \
+      license="MIT"
 
+
+## Install
 RUN \
 	# Print executed commands
 	set -x \
@@ -16,5 +20,5 @@ RUN \
 	&& apk-cleanup
 
 
-# Entrypoint
-ENTRYPOINT ["/entrypoint"]
+## Entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
