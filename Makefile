@@ -6,6 +6,8 @@ build: build-3.7 build-3.8 build-3.9
 
 test: test-3.7 test-3.8 test-3.9
 
+push: push-3.7 push-3.8 push-3.9
+
 build-3.7:
 	@docker build \
 		--build-arg http_proxy=${http_proxy} \
@@ -61,6 +63,16 @@ test-3.9: build-3.9
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		dsuite/goss:latest \
 		dgoss run --entrypoint=/goss/entrypoint.sh $(DOCKER_IMAGE):3.9
+
+push-3.7: build-3.7
+	@docker push $(DOCKER_IMAGE):3.7
+
+push-3.8: build-38
+	@docker push $(DOCKER_IMAGE):3.8
+
+push-3.9: build-3.9
+	@docker push $(DOCKER_IMAGE):3.9
+	@docker push $(DOCKER_IMAGE):latest
 
 shell-3.7: build-3.7
 	@docker run -it --rm \
