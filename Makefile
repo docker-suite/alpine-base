@@ -31,7 +31,7 @@ build-3.9:
 		--file $(DIR)/Dockerfiles/Dockerfile-3.9 \
 		--tag $(DOCKER_IMAGE):3.9 \
 		$(DIR)/Dockerfiles
-	docker tag $(DOCKER_IMAGE):3.9 $(DOCKER_IMAGE):latest
+	@docker tag $(DOCKER_IMAGE):3.9 $(DOCKER_IMAGE):latest
 
 
 test-3.7: build-3.7
