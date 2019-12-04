@@ -12,44 +12,44 @@ Based on [Alpine][alpine], this image included mandatory packages and tools for 
 ## ![](https://github.com/docker-suite/artwork/raw/master/various/pin/png/pin_16.png) Packages included
 
 <table>
- <tbody>
-  <tr>
-   <td><code>bash</code></td>
-   <td>https://tiswww.case.edu/php/chet/bash/bashtop.html</td>
-  </tr>
-  <tr>
-   <td><code>curl</code></td>
-   <td>https://curl.haxx.se</td>
-  </tr>
-  <tr>
-   <td><code>grep</code></td>
-   <td>http://www.gnu.org/software/grep</td>
-  </tr>
-  <tr>
-   <td><code>jq</code></td>
-   <td>https://stedolan.github.io/jq</td>
-  </tr>
-  <tr>
-   <td><code>procps</code></td>
-   <td>https://gitlab.com/procps-ng/procps</td>
-  </tr>
-  <tr>
-   <td><code>sed</code></td>
-   <td>http://www.gnu.org/software/sed</td>
-  </tr>
-  <tr>
-   <td><code>shadow</code></td>
-   <td></td>
-  </tr>
-  <tr>
-   <td><code>su-exec</code></td>
-   <td>https://github.com/ncopa/su-exec</td>
-  </tr>
-  <tr>
-   <td><code>tini</code></td>
-   <td>https://github.com/krallin/tini</td>
-  </tr>
- </tbody>
+  <tbody>
+    <tr>
+      <td><code>bash</code></td>
+      <td>https://tiswww.case.edu/php/chet/bash/bashtop.html</td>
+    </tr>
+    <tr>
+      <td><code>curl</code></td>
+      <td>https://curl.haxx.se</td>
+    </tr>
+    <tr>
+      <td><code>grep</code></td>
+      <td>http://www.gnu.org/software/grep</td>
+    </tr>
+    <tr>
+      <td><code>jq</code></td>
+      <td>https://stedolan.github.io/jq</td>
+    </tr>
+    <tr>
+      <td><code>procps</code></td>
+      <td>https://gitlab.com/procps-ng/procps</td>
+    </tr>
+    <tr>
+      <td><code>sed</code></td>
+      <td>http://www.gnu.org/software/sed</td>
+    </tr>
+    <tr>
+      <td><code>shadow</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>su-exec</code></td>
+      <td>https://github.com/ncopa/su-exec</td>
+    </tr>
+    <tr>
+      <td><code>tini</code></td>
+      <td>https://github.com/krallin/tini</td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -108,7 +108,7 @@ Have a look at the following table to see all supported environment variables fo
 <table>
  <thead>
   <tr>
-   <th>Env Variable</th>
+   <th>Variable</th>
    <th>Type</th>
    <th>Default</th>
    <th>Description</th>
@@ -160,6 +160,26 @@ Have a look at the following table to see all supported environment variables fo
  </tbody>
 </table>
 
+
+## ![](https://github.com/docker-suite/artwork/raw/master/various/pin/png/pin_16.png) Volumes
+
+<table>
+ <tbody>
+  <tr>
+   <td><code>/startup.d</code></td>
+   <td>Any scripts ending by <code>*.sh</code> found in this directory will be <strong>sourced</strong> at the very beginning.</td>
+  </tr>
+  <tr>
+   <td><code>/startup.1.d</code></td>
+   <td>Any executable scripts ending by <code>*.sh</code> found in this directory will be <strong>executed</strong> during startup.</br></br><sub>(before <code>/startup.2.d</code>)</sub></td>
+  </tr>
+  <tr>
+   <td><code>/startup.2.d</code></td>
+   <td>Any executable scripts ending by <code>*.sh</code> found in this directory will be <strong>executed</strong> during startup.</br></br><sub>(after <code>/startup.1.d</code>)</sub>
+   </td>  
+  </tr>
+ </tbody>
+</table>
 
 [alpine]: http://alpinelinux.org/
 [docker-suite]: https://github.com/docker-suite/
