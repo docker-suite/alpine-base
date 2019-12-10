@@ -92,7 +92,7 @@ Based on [Alpine][alpine], this image included mandatory packages and tools for 
   </tr>
   <tr>
    <td><code>/usr/local/lib/bash-logger.sh</code></td>
-   <td><a href="https://github.com/bash-suite/bash-logger" >Bash Logger designed to incorperate PSR-3 compliance</a></td>
+   <td><a href="https://github.com/bash-suite/bash-logger" >Bash Logger designed to incorporate PSR-3 compliance</a></td>
   </tr>
   <tr>
    <td><code>/usr/local/lib/persist-env.sh</code></td>
@@ -126,7 +126,8 @@ Have a look at the following table to see all supported environment variables fo
    <td><code>BOOT_DELAY</code></td>
    <td>int</td>
    <td></td>
-   <td>Delay in second before stating up the container entrypoint</td>
+   <td>Delay in second before stating up the container entrypoint
+   <br/>To wait for a database or a web site to be online, prefer using <code>wait-host</code></td>
   </tr>
   <tr>
    <td><code>HTTP_PROXY</code><br/><br/><code>http_proxy</code></td>
@@ -147,16 +148,38 @@ Have a look at the following table to see all supported environment variables fo
    <td>Set docker OS timezone.<br/>(Example: <code>Europe/Paris</code>)</td>
   </tr>
   <tr>
+    <td colspan="4"></td>
+  </tr>
+  <tr>
    <td><code>NEW_UID</code></td>
    <td>int</td>
    <td><code>1000</code></td>
-   <td>Define a user with a new <code>uid</code> in order to syncronize file system permissions with your host computer and the Docker container. You should use a value that matches your host systems local user.<br/><br/><sub>(Type <code>id -u</code> for your uid).</sub></td>
+   <td>Change the default user with a new <code>uid</code> in order to syncronize file system permissions with your host computer and the Docker container. You should use a value that matches your host systems local user.<br/><br/><sub>(Type <code>id -u</code> for your uid)</sub></td>
   </tr>
   <tr>
    <td><code>NEW_GID</code></td>
    <td>int</td>
    <td><code>1000</code></td>
-   <td>Define a group with a new <code>gid</code> in order to syncronize file system permissions with your host computer and the Docker container. You should use a value that matches your host systems local group.<br/><br/><sub>(Type <code>id -g</code> for your gid).</sub></td>
+   <td>Change the default group with a new <code>gid</code> in order to syncronize file system permissions with your host computer and the Docker container. You should use a value that matches your host systems local group.<br/><br/><sub>(Type <code>id -g</code> for your gid)</sub></td>
+  </tr>
+  <tr>
+   <td><code>NEW_USER</code></td>
+   <td>string</td>
+   <td></td>
+   <td>Rename the default user</td>
+  </tr>
+  <tr>
+   <td><code>NEW_GROUP</code></td>
+   <td>string</td>
+   <td></td>
+   <td>Rename the default group</td>
+  </tr>
+  <tr>
+   <td><code>USER</code></td>
+   <td>string</td>
+   <td></td>
+   <td>Sets the user name to use when running the main process <code>PID 1</code>
+   <br/><br/><sub>(Do not use the <code>USER</code> instruction in your Dockerfile).</sub></td>
   </tr>
  </tbody>
 </table>
