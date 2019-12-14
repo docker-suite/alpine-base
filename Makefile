@@ -41,10 +41,8 @@ shell: ## Run shell ( usage : make shell v="3.10" )
 		-e http_proxy=${http_proxy} \
 		-e https_proxy=${https_proxy} \
 		-e DEBUG_LEVEL=DEBUG \
-		-v $(DIR)/tests/hugo:/package \
-		-v $(DIR)/packages:/packages \
 		$(DOCKER_IMAGE):$(version) \
-		sh
+		bash
 
 remove: ## Remove all generated images
 	@docker images | grep $(DOCKER_IMAGE) | tr -s ' ' | cut -d ' ' -f 2 | xargs -I {} docker rmi $(DOCKER_IMAGE):{} || true
