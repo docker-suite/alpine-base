@@ -1,9 +1,16 @@
 FROM alpine:{{ALPINE_VERSION}}
 
 LABEL maintainer="Hexosse <hexosse@gmail.com>" \
-      description="Minimal Alpine image used as a base image." \
-      vendor="docker-suite" \
-      license="MIT"
+    org.opencontainers.image.title="docker-suite dsuite/alpine-base image" \
+    org.opencontainers.image.description="Minimal Alpine image used as a base image" \
+    org.opencontainers.image.authors="Hexosse <hexosse@gmail.com>" \
+    org.opencontainers.image.vendor="docker-suite" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://github.com/docker-suite/alpine-base" \
+    org.opencontainers.image.source="https://github.com/docker-suite/alpine-base" \
+    org.opencontainers.image.documentation="https://github.com/docker-suite/alpine-base/blob/master/Readme.md" \
+    org.opencontainers.image.created="{{DOCKER_IMAGE_CREATED}}" \
+    org.opencontainers.image.revision="{{DOCKER_IMAGE_REVISION}}"
 
 ## Install
 RUN \
