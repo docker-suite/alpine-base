@@ -27,6 +27,10 @@ file:
     filetype: file
     contains:
     - "exec tini --"
+  /etc/periodic/daily/logrotate:
+    exists: true
+    mode: "0755"
+    filetype: file
   /tmp/stdout.log:
     exists: true
     contains:
@@ -47,6 +51,8 @@ package:
     installed: true
   jq:
     installed: true
+  logrotate:
+    installed: true
   procps:
     installed: true
   sed:
@@ -57,6 +63,15 @@ package:
     installed: true
   tini:
     installed: true
+
+{{if getEnv "ALPINE_BASE"}}
+command:
+  gpg-verify:
+    exit-status: 0
+    exec: "GPG_KEYS=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 gpg-verify /tmp/tini.asc /tmp/tini"
+    stderr: []
+    skip: false
+{{end}}
 
 group:
   dsuite:
