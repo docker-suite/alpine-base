@@ -142,6 +142,12 @@ Have a look at the following table to see all supported environment variables fo
    <td>Make sure that proxy defined in <code>HTTPS_PROXY</code> or <code>https_proxy</code> is well formated</td>
   </tr>
   <tr>
+   <td><code>NO_PROXY</code><br/><br/><code>no_proxy</code></td>
+   <td>string</td>
+   <td></td>
+   <td>comma-separated list of hosts, IP addresses, or IP ranges in CIDR format</td>
+  </tr>
+  <tr>
    <td><code>TIMEZONE</code><br/><br/><code>TZ</code></td>
    <td>string</td>
    <td><code>UTC</code></td>
