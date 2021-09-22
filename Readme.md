@@ -7,7 +7,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![dockeri.co](https://dockeri.co/image/dsuite/alpine-base)](https://hub.docker.com/r/dsuite/alpine-base)
 
+
 Based on [Alpine][alpine], this image included mandatory packages and tools for [docker-suite (dsuite)][docker-suite] images.
+
+
+## ![](https://github.com/docker-suite/artwork/raw/master/various/pin/png/pin_16.png) What's in this image
+
+This image is built on top of [Alpine][alpine] and is aimed to be run as root user.
+Cron is enable by default.
 
 
 ## ![](https://github.com/docker-suite/artwork/raw/master/various/pin/png/pin_16.png) Packages included
@@ -29,6 +36,10 @@ Based on [Alpine][alpine], this image included mandatory packages and tools for 
     <tr>
       <td><code>jq</code></td>
       <td>https://stedolan.github.io/jq</td>
+    </tr>
+    <tr>
+      <td><code>logrotate</code></td>
+      <td>https://github.com/logrotate/logrotate</td>
     </tr>
     <tr>
       <td><code>procps</code></td>
@@ -142,12 +153,6 @@ Have a look at the following table to see all supported environment variables fo
    <td>Make sure that proxy defined in <code>HTTPS_PROXY</code> or <code>https_proxy</code> is well formated</td>
   </tr>
   <tr>
-   <td><code>NO_PROXY</code><br/><br/><code>no_proxy</code></td>
-   <td>string</td>
-   <td></td>
-   <td>comma-separated list of hosts, IP addresses, or IP ranges in CIDR format</td>
-  </tr>
-  <tr>
    <td><code>TIMEZONE</code><br/><br/><code>TZ</code></td>
    <td>string</td>
    <td><code>UTC</code></td>
@@ -155,30 +160,6 @@ Have a look at the following table to see all supported environment variables fo
   </tr>
   <tr>
     <td colspan="4"></td>
-  </tr>
-  <tr>
-   <td><code>NEW_UID</code></td>
-   <td>int</td>
-   <td><code>1000</code></td>
-   <td>Change the default user with a new <code>uid</code> in order to syncronize file system permissions with your host computer and the Docker container. You should use a value that matches your host systems local user.<br/><br/><sub>(Type <code>id -u</code> for your uid)</sub></td>
-  </tr>
-  <tr>
-   <td><code>NEW_GID</code></td>
-   <td>int</td>
-   <td><code>1000</code></td>
-   <td>Change the default group with a new <code>gid</code> in order to syncronize file system permissions with your host computer and the Docker container. You should use a value that matches your host systems local group.<br/><br/><sub>(Type <code>id -g</code> for your gid)</sub></td>
-  </tr>
-  <tr>
-   <td><code>NEW_USER</code></td>
-   <td>string</td>
-   <td></td>
-   <td>Rename the default user</td>
-  </tr>
-  <tr>
-   <td><code>NEW_GROUP</code></td>
-   <td>string</td>
-   <td></td>
-   <td>Rename the default group</td>
   </tr>
   <tr>
    <td><code>USER</code></td>
