@@ -57,7 +57,7 @@ build: ## Build ( usage : make build v=3.13 )
 		-v $(DIR)/Dockerfiles:/data \
 		dsuite/alpine-data \
 		sh -c "templater Dockerfile.template > Dockerfile-$(version)"
-	@docker build --force-rm \
+	@docker build --no-cache \
 		--build-arg GH_TOKEN=${GH_TOKEN} \
 		--file $(DIR)/Dockerfiles/Dockerfile-$(version) \
 		--tag $(DOCKER_IMAGE):$(version) \
