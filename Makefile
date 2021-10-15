@@ -76,7 +76,6 @@ push: ## Push ( usage : make push v=3.13 )
 
 shell: ## Run shell ( usage : make shell v=3.13 )
 	$(eval version := $(or $(v),$(latest)))
-	@$(MAKE) build v=$(version)
 	@docker run -it --rm --init \
 		-e DEBUG_LEVEL=DEBUG \
 		$(DOCKER_IMAGE):$(version) \
